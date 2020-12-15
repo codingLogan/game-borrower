@@ -44,9 +44,9 @@ explicitly by passing express.static() an index option
 */
 console.log({
   serve: 'react static files',
-  from: path.join(__dirname, 'react-client/build'),
+  from: path.join(__dirname, 'client/build'),
 })
-app.use(express.static(path.join(__dirname, 'react-client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 /*
  Tell express to use these base routes (post,put,get,delete)
