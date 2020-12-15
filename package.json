@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "build": "npm install ./react-client && npm run --prefix react-client build"
+    "build": "npm run --prefix react-client build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
