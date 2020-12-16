@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import './ConsoleScreen.css'
+import ConsoleScreen from './ConsoleScreen'
 
 function App() {
   return (
     <div className="App">
+      <ConsoleScreen />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

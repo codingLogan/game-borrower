@@ -1,0 +1,44 @@
+.console {
+    display: inline-block;
+    height: 80vh;
+    width: 50vh;
+    background-color: #b9b5b4;
+    border-radius: 5%;
+    border-bottom-right-radius: 20%;
+}
+
+.console_screen {
+    width: 45vh;
+    height: 40vh;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #9f9e9c;
+    border-radius: 2%;
+    box-shadow: inset 0 0 4px black;
+}
+
+.console_screen-display {
+    position: relative;
+    width: 36vh;
+    height: 33vh;
+    margin: auto;
+    top: 16px;
+    background-color: #79856b;
+    border-radius: 2%;
+    box-shadow: inset 0 0 4px black;
+}
+
+.console_buttons {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+}
+
+.AB_buttons {
+    display: inline-block;
+}
+
+.console_directions {
+    font-size: 2em;
+    font-weight: bold;
+}
