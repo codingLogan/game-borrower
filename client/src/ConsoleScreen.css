@@ -89,3 +89,30 @@
     left: -10vh;
     position: absolute;
 }
+
+
+.console_direction.console_upDown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.console_direction.console_upDown button, .console_direction.console_leftRight button {
+    background: transparent;
+    position: relative;
+    height: 5vh;
+    color: white;
+    border: none;
+}
+
+.console_direction.console_leftRight {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.console_direction.console_leftRight button {
+    transform: rotate(-90deg)
+}

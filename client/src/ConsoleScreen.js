@@ -1,21 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
-// import './ConsoleScreen.js'
+
+// Mock data first
+const borrowers = [
+  {name: "Casey"},
+  {name: "Logan"},
+  {name: "Hannah"},
+  {name: "Daylen"},
+]
 
 function ConsoleScreen() {
   return (
     <div className="console">
       <div className="console_screen">
-          <div className="console_screen-display"></div>
+          <div className="console_screen-display">
+            {borrowers.map(borrower => (
+              <div>{borrower.name}</div>
+            ))}
+          </div>
       </div>
       <div className="console_buttons">
         <div className="console_directions">
-            <div className="console_direction console_upDown"></div>
-            <div className="console_direction console_leftRight"></div>
+            <div className="console_direction console_upDown">
+              <button>U</button>
+              <button>D</button>
+            </div>
+            <div className="console_direction console_leftRight">
+              <button>L</button>
+              <button>R</button>
+            </div>
         </div>
         <div className="AB_buttons">
-            <div className="console_btn--circle console_accept"></div>
-            <div className="console_btn--circle console_back"></div>
+            <button className="console_btn--circle console_accept"></button>
+            <button className="console_btn--circle console_back"></button>
         </div>
       </div>
       <div className="startSelect_buttons"></div>
