@@ -26,6 +26,16 @@
     background-color: #79856b;
     border-radius: 2%;
     box-shadow: inset 0 0 4px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.active_item {
+    color: #79856b;
+    background: black;
+    margin: 1vh;
+    padding: 1vh;
 }
 
 .console_buttons {
@@ -115,4 +125,30 @@
 
 .console_direction.console_leftRight button {
     transform: rotate(-90deg)
+}
+
+/* Start and Select buttons */
+.startSelect_buttons {
+    position: relative;
+    bottom: -34vh;
+}
+
+.startSelect_buttons button {
+    width: 6vh;
+    margin: 1vh;
+    background-color: black;
+    border-radius: 30%
+}
+
+.console_start::after {
+    position: relative;
+    content: "Start";
+    top: 3vh;
+    left: -2vh;
+}
+.console_select::after {
+    position: relative;
+    content: "Select";
+    top: 3vh;
+    left: -4vh;
 }

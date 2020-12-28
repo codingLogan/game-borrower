@@ -3,10 +3,10 @@ import './App.css';
 
 // Mock data first
 const borrowers = [
-  {name: "Casey"},
-  {name: "Logan"},
-  {name: "Hannah"},
-  {name: "Daylen"},
+  {name: "Bowser"},
+  {name: "Mario", ui_test: "active_item"},
+  {name: "Luigi"},
+  {name: "Samus"},
 ]
 
 function ConsoleScreen() {
@@ -14,8 +14,9 @@ function ConsoleScreen() {
     <div className="console">
       <div className="console_screen">
           <div className="console_screen-display">
+            <em>Borrowers</em><br></br>
             {borrowers.map(borrower => (
-              <div>{borrower.name}</div>
+              <div class={borrower.ui_test}>{borrower.name}</div>
             ))}
           </div>
       </div>
@@ -35,9 +36,10 @@ function ConsoleScreen() {
             <button className="console_btn--circle console_back"></button>
         </div>
       </div>
-      <div className="startSelect_buttons"></div>
-      <div className="console_start">Start</div>
-      <div className="console_select">Select</div>
+      <div className="startSelect_buttons">
+        <button className="console_start">Start</button>
+        <button className="console_select">Select</button>
+      </div>
     </div>
   );
 }
