@@ -31,6 +31,7 @@
     top: 20px;
     width: 38vh;
     height: 38vh;
+    padding: 4px;
 }
 
 /* screen display, oversees page content */
@@ -41,10 +42,6 @@
     background-color: #79856b;
     border-radius: 2%;
     box-shadow: inset 0 0 4px black;
-}
-
-.console_screen-display .active_item {
-    margin: 1vh;
 }
 
 .active_item {
