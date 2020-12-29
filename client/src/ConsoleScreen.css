@@ -144,11 +144,9 @@
     position: relative;
     content: "Start";
     top: 3vh;
-    left: -2vh;
 }
 .console_select::after {
     position: relative;
     content: "Select";
     top: 3vh;
-    left: -4vh;
 }

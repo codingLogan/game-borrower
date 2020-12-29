@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import './ConsoleScreen.css'
+import ScreenContent from './ScreenContent'
 
 // Mock data first
 const borrowers = [
@@ -13,12 +13,9 @@ function ConsoleScreen() {
   return (
     <div className="console">
       <div className="console_screen">
-          <div className="console_screen-display">
-            <em>Borrowers</em><br></br>
-            {borrowers.map(borrower => (
-              <div class={borrower.ui_test}>{borrower.name}</div>
-            ))}
-          </div>
+        <div className="console_screen-display">
+          <ScreenContent />
+        </div>
       </div>
       <div className="console_buttons">
         <div className="console_directions">
@@ -37,8 +34,8 @@ function ConsoleScreen() {
         </div>
       </div>
       <div className="startSelect_buttons">
-        <button className="console_start">Start</button>
-        <button className="console_select">Select</button>
+        <button className="console_start"></button>
+        <button className="console_select"></button>
       </div>
     </div>
   );
