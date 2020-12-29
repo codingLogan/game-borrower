@@ -45,42 +45,53 @@
     position: relative;
 }
 
+.console_btn {
+    background-color: #1e1e20;
+}
+
 .console_btn--circle {
     display: inline-block;
     position: absolute;
     height: 7vh;
     width: 7vh;
-    background-color: #1e1e20;
     border-radius: 50%;
+}
+
+.console_btn--menu {
+    width: 6vh;
+    height: 2vh;
+    margin: 1vh;
+    background-color: black;
+    border-radius: 30%
 }
 
 .AB_buttons {
     display: inline-block;
 }
 
-.console_accept {
+#console_accept {
     top: 10vh;
     right: 5vh;
 }
 
-.console_accept::after {
+#console_accept::after {
     position: absolute;
     content: "A";
     top: 7vh;
 }
 
-.console_back {
+#console_back {
     top: 14vh;
     right: 14vh;
 }
 
-.console_back::after {
+#console_back::after {
     position: absolute;
     content: "B";
     top: 7vh;
 }
 
-.console_directions {
+#console_directions {
     font-size: 2em;
     font-weight: bold;
     position: relative;
@@ -124,29 +135,22 @@
 }
 
 /* Start and Select buttons */
-.startSelect_buttons {
+#menu_buttons {
     position: relative;
     bottom: -34vh;
 }
 
-.startSelect_buttons button {
-    width: 6vh;
-    margin: 1vh;
-    background-color: black;
-    border-radius: 30%
-}
-
-.console_start::after {
+#console_start::after {
     position: relative;
     content: "Start";
     top: 3vh;
 }
-.console_select::after {
+#console_select::after {
     position: relative;
     content: "Select";
     top: 3vh;
 }
 
-.console_directions .console_direction .text_direction--flip {
+#console_directions .console_direction .text_direction--flip {
     transform: rotate(180deg);
 }

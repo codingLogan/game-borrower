@@ -1,5 +1,8 @@
 import './ConsoleScreen.css'
 import ScreenContent from './ScreenContent'
+import ActionButton from './ActionButton'
+import MenuButton from './MenuButton'
+import DPad from './DPad'
 
 // Mock data first
 const borrowers = [
@@ -18,24 +21,15 @@ function ConsoleScreen() {
         </div>
       </div>
       <div className="console_buttons">
-        <div className="console_directions">
-            <div className="console_direction console_upDown">
-              <button>▲</button>
-              <button className="text_direction--flip">▲</button>
-            </div>
-            <div className="console_direction console_leftRight">
-              <button className="text_direction--flip">▲</button>
-              <button>▲</button>
-            </div>
-        </div>
+        <DPad id="console_directions" />
         <div className="AB_buttons">
-            <button className="console_btn--circle console_accept"></button>
-            <button className="console_btn--circle console_back"></button>
+            <ActionButton id="console_accept" type="circle" />
+            <ActionButton id="console_back" type="circle" />
         </div>
       </div>
-      <div className="startSelect_buttons">
-        <button className="console_start"></button>
-        <button className="console_select"></button>
+      <div id="menu_buttons">
+        <MenuButton id="console_start" />
+        <MenuButton id="console_select" />
       </div>
     </div>
   );
