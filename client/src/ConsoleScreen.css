@@ -123,10 +123,6 @@
     align-content: center;
 }
 
-.console_direction.console_leftRight button {
-    transform: rotate(-90deg)
-}
-
 /* Start and Select buttons */
 .startSelect_buttons {
     position: relative;
@@ -149,4 +145,8 @@
     position: relative;
     content: "Select";
     top: 3vh;
+}
+
+.console_directions .console_direction .text_direction--flip {
+    transform: rotate(180deg);
 }

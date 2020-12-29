@@ -20,12 +20,12 @@ function ConsoleScreen() {
       <div className="console_buttons">
         <div className="console_directions">
             <div className="console_direction console_upDown">
-              <button>U</button>
-              <button>D</button>
+              <button>▲</button>
+              <button className="text_direction--flip">▲</button>
             </div>
             <div className="console_direction console_leftRight">
-              <button>L</button>
-              <button>R</button>
+              <button className="text_direction--flip">▲</button>
+              <button>▲</button>
             </div>
         </div>
         <div className="AB_buttons">
