@@ -1,3 +1,5 @@
+require('./bootstrap')
+
 // Helper to manage http errors more clearly
 var createError = require('http-errors');
 // Web application framework
@@ -12,6 +14,7 @@ var logger = require('morgan');
 // Grab external routing files
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var borrowersRouter = require('./routes/borrowers');
 
 // Initialize the app
 // Note app.locals can be created for app-level props
@@ -55,6 +58,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/borrowers', borrowersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
