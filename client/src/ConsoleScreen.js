@@ -14,7 +14,7 @@ const borrowers = [
 
 function ConsoleScreen() {
   return (
-    <div className="console">
+    <div id="console">
       <div className="console_screen">
         <div className="console_screen-display">
           <ScreenContent />
