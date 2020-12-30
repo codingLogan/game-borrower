@@ -1,9 +1,13 @@
-// Attempt to connect to a Mongo instance, and give the instance to all routes
 const mongo = require('./mongo')
-mongo.connectToMongo(res => {
-  if ( res ) {
-    console.error(res)
-  }
-})
+
+// Attempt to connect to a Mongo instance, and give the instance to all routes
+async function establishConnection() {
+  await mongo.connectToMongo()
+  .then(()=>{
+    console.log("boostrap complete")
+  })
+}
+
+establishConnection()
 
 console.log({env: process.env.GAMEBORROWER_DB})
