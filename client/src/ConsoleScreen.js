@@ -4,14 +4,6 @@ import ActionButton from './ActionButton'
 import MenuButton from './MenuButton'
 import DPad from './DPad'
 
-// Mock data first
-const borrowers = [
-  {name: "Bowser"},
-  {name: "Mario", ui_test: "active_item"},
-  {name: "Luigi"},
-  {name: "Samus"},
-]
-
 function ConsoleScreen() {
   return (
     <div id="console">
