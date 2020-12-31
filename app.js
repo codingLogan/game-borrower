@@ -1,21 +1,19 @@
-require('./bootstrap')
+require("./bootstrap");
 
 // Helper to manage http errors more clearly
-var createError = require('http-errors');
+var createError = require("http-errors");
 // Web application framework
-var express = require('express');
+var express = require("express");
 // A helper utility to generate and join system paths
-var path = require('path');
+var path = require("path");
 // populate req.cookies (it's middleware)
-var cookieParser = require('cookie-parser');
+var cookieParser = require("cookie-parser");
 // Middleware that logs requests to console
-var logger = require('morgan');
+var logger = require("morgan");
 
 // Grab external routing files
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var borrowersRouter = require('./routes/borrowers');
-var apiRouter = require('./routes/api')
+var indexRouter = require("./routes/index");
+var apiRouter = require("./routes/api");
 
 // Initialize the app
 // Note app.locals can be created for app-level props
@@ -27,7 +25,7 @@ var app = express();
 // app.set('view engine', 'jade');
 
 // Log request output
-app.use(logger('dev'));
+app.use(logger("dev"));
 // populates req.body when json content-type
 app.use(express.json());
 // populate req.body when urlencoded content-type
@@ -47,34 +45,32 @@ You can configure which file should be search for
 explicitly by passing express.static() an index option
 */
 console.log({
-  serve: 'react static files',
-  from: path.join(__dirname, 'client/build'),
-})
-app.use(express.static(path.join(__dirname, 'client/build')));
+  serve: "react static files",
+  from: path.join(__dirname, "client/build"),
+});
+app.use(express.static(path.join(__dirname, "client/build")));
 
 /*
  Tell express to use these base routes (post,put,get,delete)
  '/' will create routes for the root url
- '/users' will create routes for /users
+ '/api' will create routes for all routes starting with /api
 */
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/borrowers', borrowersRouter);
-app.use('/api', apiRouter);
+app.use("/", indexRouter);
+app.use("/api", apiRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
 
   // This is basically saying, "is Node running in dev or prod mode?"
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-  console.error({local: res.locals, env: req.app.get('env')})
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+  console.error({ local: res.locals, env: req.app.get("env") });
 
   // render the error page
   res.status(err.status || 500);
