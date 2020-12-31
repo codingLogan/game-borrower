@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import api from '../services/apiService'
 
 // Mock data first
 const mockBorrowers = [
@@ -12,8 +13,7 @@ function ScreenContent() {
   const [borrowers, setBorrowers] = useState([])
 
   useEffect(() => {
-    fetch(`/borrowers`)
-    .then(response => response.json())
+    api(`/borrowers`)
     .then(data => {
       console.log({data})
       setBorrowers(data[0].persons)

@@ -15,6 +15,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var borrowersRouter = require('./routes/borrowers');
+var apiRouter = require('./routes/api')
 
 // Initialize the app
 // Note app.locals can be created for app-level props
@@ -59,6 +60,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/borrowers', borrowersRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
