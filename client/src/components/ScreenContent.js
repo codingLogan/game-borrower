@@ -16,7 +16,9 @@ function ScreenContent() {
           <Games />
         </Route>
         <Route path="/">
-          <p>Games Inventory</p>
+          <p>
+            <strong>Games Inventory</strong>
+          </p>
           <Link to="/games">View Games</Link>
           <Link to="/borrowers">Borrowers</Link>
         </Route>
