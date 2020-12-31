@@ -12,7 +12,7 @@ function ScreenContent() {
   const [borrowers, setBorrowers] = useState([])
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_HOST}/borrowers`)
+    fetch(`/borrowers`)
     .then(response => response.json())
     .then(data => {
       console.log({data})
@@ -23,11 +23,11 @@ function ScreenContent() {
       <>
         <em>Mock Borrowers</em><br></br>
         {mockBorrowers.map(borrower => (
-          <div class={borrower.ui_test}>{borrower.name}</div>
+          <div key={borrower.name} className={borrower.ui_test}>{borrower.name}</div>
         ))}
         <em>Data Borrowers</em><br></br>
         {borrowers.map(borrower => (
-          <div class={borrower}>{borrower}</div>
+          <div key={borrower} className={borrower}>{borrower}</div>
         ))}
       </> 
     )
