@@ -5,7 +5,7 @@
  */
 function api(url, options = {}) {
     // Return the parsed json from the request as a Promise
-    return fetch(url, options)
+    return fetch(`/api${url}`, options)
     .then(response => response.json())
 }
 

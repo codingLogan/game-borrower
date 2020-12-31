@@ -19,4 +19,21 @@ router.get('/games', function(req, res, next) {
     mongo.getDatabase().collection('games').find().toArray(mongoCallback)
 });
 
+// Games Collection
+router.get('/users', function(req, res, next) {
+    console.log("hit api/users")
+    
+    const mongoCallback = function (err, result) {
+        if (err) {
+            console.error("error occured in api/users")
+            res.json([])
+        }
+        
+        console.log(result)
+        res.json(result)
+    }
+    
+    mongo.getDatabase().collection('users').find().toArray(mongoCallback)
+});
+
 module.exports = router

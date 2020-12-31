@@ -1,10 +1,10 @@
 import api from './apiService'
 
-function getGames() {
-    return api('/games')
+function getUsers() {
+    return api('/users')
     .then(data => data)
 }
 
 export {
-    getGames
+    getUsers
 }

@@ -1,36 +1,28 @@
-import { useEffect, useState } from 'react'
-import api from '../services/apiService'
-
-// Mock data first
-const mockBorrowers = [
-    {name: "Bowser"},
-    {name: "Mario", ui_test: "active_item"},
-    {name: "Luigi"},
-    {name: "Samus"},
-  ]
+import { useState } from "react";
+import { Switch, Route, Link } from "react-router-dom";
+import Borrowers from "./Borrowers";
+import Games from "./Games";
 
 function ScreenContent() {
-  const [borrowers, setBorrowers] = useState([])
+  const [borrowers, setBorrowers] = useState([]);
 
-  useEffect(() => {
-    api(`/borrowers`)
-    .then(data => {
-      console.log({data})
-      setBorrowers(data[0].persons)
-    })
-  }, [])
-    return (
-      <>
-        <em>Mock Borrowers</em><br></br>
-        {mockBorrowers.map(borrower => (
-          <div key={borrower.name} className={borrower.ui_test}>{borrower.name}</div>
-        ))}
-        <em>Data Borrowers</em><br></br>
-        {borrowers.map(borrower => (
-          <div key={borrower} className={borrower}>{borrower}</div>
-        ))}
-      </> 
-    )
+  return (
+    <>
+      <Switch>
+        <Route path="/borrowers">
+          <Borrowers />
+        </Route>
+        <Route path="/games">
+          <Games />
+        </Route>
+        <Route path="/">
+          <p>Games Inventory</p>
+          <Link to="/games">View Games</Link>
+          <Link to="/borrowers">Borrowers</Link>
+        </Route>
+      </Switch>
+    </>
+  );
 }
 
-export default ScreenContent
+export default ScreenContent;

@@ -1,8 +1,9 @@
-import './ConsoleScreen.css'
-import ScreenContent from './ScreenContent'
-import ActionButton from './ActionButton'
-import MenuButton from './MenuButton'
-import DPad from './DPad'
+import { Link } from "react-router-dom";
+import "./ConsoleScreen.css";
+import ScreenContent from "./ScreenContent";
+import ActionButton from "./ActionButton";
+import MenuButton from "./MenuButton";
+import DPad from "./DPad";
 
 function ConsoleScreen() {
   return (
@@ -15,8 +16,8 @@ function ConsoleScreen() {
       <div className="console_buttons">
         <DPad id="console_directions" />
         <div className="AB_buttons">
-            <ActionButton id="console_accept" type="circle" />
-            <ActionButton id="console_back" type="circle" />
+          <ActionButton id="console_accept" type="circle" />
+          <ActionButton id="console_back" type="circle" />
         </div>
       </div>
       <div id="menu_buttons">
