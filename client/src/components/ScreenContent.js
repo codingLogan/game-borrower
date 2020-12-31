@@ -1,10 +1,34 @@
-import { useState } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Switch, Route, Link, useHistory } from "react-router-dom";
 import Borrowers from "./Borrowers";
 import Games from "./Games";
 
-function ScreenContent() {
-  const [borrowers, setBorrowers] = useState([]);
+function ScreenContent({ navItems, setNavItems }) {
+  const history = useHistory();
+
+  const initialItems = [
+    {
+      to: "/games",
+      text: "View Games",
+      accept: function () {
+        history.push("/games");
+      },
+    },
+    {
+      to: "/borrowers",
+      text: "Borrowers",
+      accept: function () {
+        history.push("/borrowers");
+      },
+    },
+  ];
+
+  useEffect(() => {
+    setNavItems({
+      activeIndex: 0,
+      items: initialItems,
+    });
+  }, []);
 
   return (
     <>
@@ -19,8 +43,14 @@ function ScreenContent() {
           <p>
             <strong>Games Inventory</strong>
           </p>
-          <Link to="/games">View Games</Link>
-          <Link to="/borrowers">Borrowers</Link>
+          {navItems.items.map((item, index) => (
+            <Link
+              className={navItems.activeIndex === index ? "active_item" : ""}
+              to={item.to}
+            >
+              {item.text}
+            </Link>
+          ))}
         </Route>
       </Switch>
     </>
