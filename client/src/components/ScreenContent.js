@@ -2,34 +2,9 @@ import { useEffect, useState } from "react";
 import { Switch, Route, Link, useHistory } from "react-router-dom";
 import Borrowers from "./Borrowers";
 import Games from "./Games";
+import Landing from "./Landing";
 
 function ScreenContent({ navItems, setNavItems }) {
-  const history = useHistory();
-
-  const initialItems = [
-    {
-      to: "/games",
-      text: "View Games",
-      accept: function () {
-        history.push("/games");
-      },
-    },
-    {
-      to: "/borrowers",
-      text: "Borrowers",
-      accept: function () {
-        history.push("/borrowers");
-      },
-    },
-  ];
-
-  useEffect(() => {
-    setNavItems({
-      activeIndex: 0,
-      items: initialItems,
-    });
-  }, []);
-
   return (
     <>
       <Switch>
@@ -37,20 +12,10 @@ function ScreenContent({ navItems, setNavItems }) {
           <Borrowers />
         </Route>
         <Route path="/games">
-          <Games />
+          <Games navItems={navItems} setNavItems={setNavItems} />
         </Route>
         <Route path="/">
-          <p>
-            <strong>Games Inventory</strong>
-          </p>
-          {navItems.items.map((item, index) => (
-            <Link
-              className={navItems.activeIndex === index ? "active_item" : ""}
-              to={item.to}
-            >
-              {item.text}
-            </Link>
-          ))}
+          <Landing navItems={navItems} setNavItems={setNavItems} />
         </Route>
       </Switch>
     </>
