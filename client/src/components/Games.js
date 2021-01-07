@@ -1,35 +1,38 @@
-import { useState, useEffect } from "react";
-import { getGames } from "../services/games";
+import { useEffect } from "react";
+import { saveGame } from "../services/games";
+import useGames from "./hooks/useGames";
 
 function Games({ navItems, setNavItems }) {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useGames([]);
+  console.log({ games });
 
-  function giveGameToLogan(index, game) {
-    console.log(`borrow ${game.name} to Logan`);
+  function assignGame(game, index) {
+    const newValue = game?.borrower === "Logan" ? "Available" : "Logan";
+    updateGame(game, index, newValue);
+  }
+
+  function updateGame(game, index, user) {
+    console.log({ game, index });
     const newGames = [...games];
-    newGames[index].borrower = "Logan";
+    newGames[index].borrower = user;
     setGames(newGames);
+    saveGame(newGames[index]);
   }
 
   useEffect(() => {
-    getGames().then((data) => {
-      console.log({ data });
-      setGames(data);
-
-      setNavItems({
-        activeIndex: 0,
-        items: data.map((game, index) => {
-          return {
-            name: game.name,
-            accept: function () {
-              // For an example, lets "give" the game to Logan
-              giveGameToLogan(index, game);
-            },
-          };
-        }),
-      });
+    setNavItems({
+      activeIndex: navItems.activeIndex || 0,
+      items: games.map((game, index) => {
+        return {
+          ...game,
+          accept: () => {
+            assignGame(game, index);
+          },
+        };
+      }),
     });
-  }, []);
+  }, [games]);
+
   return (
     <>
       <p>

@@ -1,32 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 function Landing({ navItems, setNavItems }) {
   const history = useHistory();
 
-  const initialItems = [
-    {
-      to: "/games",
-      text: "View Games",
-      accept: function () {
-        history.push("/games");
-      },
-    },
-    {
-      to: "/borrowers",
-      text: "Borrowers",
-      accept: function () {
-        history.push("/borrowers");
-      },
-    },
-  ];
-
   useEffect(() => {
+    const initialItems = [
+      {
+        to: "/games",
+        text: "View Games",
+        accept: function () {
+          history.push("/games");
+        },
+      },
+      {
+        to: "/borrowers",
+        text: "Borrowers",
+        accept: function () {
+          history.push("/borrowers");
+        },
+      },
+    ];
     setNavItems({
       activeIndex: 0,
       items: initialItems,
     });
-  }, []);
+  }, [setNavItems, history]);
 
   return (
     <>

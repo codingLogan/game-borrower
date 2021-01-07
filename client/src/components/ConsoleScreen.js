@@ -33,7 +33,6 @@ function ConsoleScreen() {
     // Check nav items and move index up if we can
     console.log(navItems.activeIndex, navItems.items.length);
     if (navItems.activeIndex < navItems.items.length - 1) {
-      console.log("changing props");
       setNavItems({
         items: navItems.items,
         activeIndex: navItems.activeIndex + 1,
@@ -45,7 +44,6 @@ function ConsoleScreen() {
     // Check nav items and move index down if we can
     console.log(navItems.activeIndex, navItems.items.length);
     if (navItems.activeIndex > 0) {
-      console.log("changing props");
       setNavItems({
         items: navItems.items,
         activeIndex: navItems.activeIndex - 1,
